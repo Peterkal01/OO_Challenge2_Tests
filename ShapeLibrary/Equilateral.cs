@@ -17,7 +17,7 @@ namespace ShapeLibrary
 
        public double GetArea()
         {
-            return (double)(Side1Length * Side1Length);
+            return Math.Sqrt(3)/(4)*(Side1Length * Side1Length);
         }
 
     }

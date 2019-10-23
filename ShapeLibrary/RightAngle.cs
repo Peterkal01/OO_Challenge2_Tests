@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeLibrary
 {
-    class RightAngle : Triangle
+    public class RightAngle : Triangle
     {
         public RightAngle(string sColour, double s1, double s2, double s3) : base(sColour, s1, s2, s3)
         {
@@ -15,7 +15,7 @@ namespace ShapeLibrary
 
         public double GetArea()
         {
-            return (Side1Length * Side2Length * 0.5);
+            return (Side1Length * Side2Length * (double)Math.Sqrt(Side1Length * Side1Length + Side2Length * Side2Length));
         }
     }
 }

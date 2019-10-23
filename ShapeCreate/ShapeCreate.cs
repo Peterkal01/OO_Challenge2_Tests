@@ -24,12 +24,11 @@ namespace ShapeCreate
         {
 
 
-            Console.WriteLine("To create a square press (1)");
-            Console.WriteLine("To create a rectangle press (2)");
-            Console.WriteLine("To create a Rectangle press (3)");
-            Console.WriteLine("To create a Right Angled Triangle press (4)");
-            Console.WriteLine("To create an Equilateral Triangle press (5)");
-            Console.WriteLine("To create a Circle press (6)");
+            Console.WriteLine("To create a Square press (1)");
+            Console.WriteLine("To create a Rectangle press (2)");
+            Console.WriteLine("To create a Right Angled Triangle press (3)");
+            Console.WriteLine("To create an Equilateral Triangle press (4)");
+            Console.WriteLine("To create a Circle press (5)");
             Console.Write("Enter selection: ");
             var choice = int.Parse(Console.ReadLine());
 
@@ -122,6 +121,61 @@ namespace ShapeCreate
             else
             {
                 Console.WriteLine("invalid option");
+            }
+
+
+            if (choice == 3)
+            {
+
+                List<RightAngle> rAngle = new List<RightAngle>();
+
+                try
+                {
+
+                    Console.WriteLine("Enter colour...");
+                    var c3 = Console.ReadLine();
+                    if (Array.IndexOf(colours, c3) == -1)
+                    {
+                        throw new InvalidInputException("Invalid colour");
+
+                    }
+
+                    Console.WriteLine("Enter first side length...");
+                    var rAngleSide1 = int.Parse(Console.ReadLine());
+                    if (rAngleSide1 < 1)
+                    {
+                        throw new InvalidInputException("Invalid input, numbers must not be negative");
+                    }
+
+                    Console.WriteLine("Enter second side length...");
+                    var rAngleSide2 = int.Parse(Console.ReadLine());
+
+                    if (rAngleSide2 < 1)
+                    {
+                        throw new InvalidInputException("Invalid input, numbers must not be negative");
+                    }
+                    rAngle.Add(new RightAngle(c3, rAngleSide1, rAngleSide2, rAngleSide3));
+
+                }
+
+                catch (InvalidInputException message)
+                {
+                    Console.WriteLine(message);
+                }
+
+
+                foreach (RightAngle i in rAngle)
+                    Console.WriteLine("RightAngledTriangle: " + i.ToString());
+
+            }
+            else
+            {
+                Console.WriteLine("invalid option");
+
+
+
+
+
             }
 
 
