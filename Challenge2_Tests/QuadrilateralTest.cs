@@ -54,7 +54,7 @@ namespace Quadrilateral_Tests
         [TestCase(5, 10, 50)]
         [TestCase(4, 6, 24)]
         [TestCase(9, 7, 63)]
-        public void Rectangle_GetArea_ValidInput_CorrectReturn(int side1, int side2, int expected)
+        public void Rectangle_GetArea_ValidInput_CorrectReturn(double side1, double side2, double expected)
         {
 
             var rec = new Rectangle("blue", side1, side2);
@@ -70,7 +70,7 @@ namespace Quadrilateral_Tests
         [TestCase(5, 10, 30)]
         [TestCase(4, 6, 20)]
         [TestCase(9, 7, 32)]
-        public void Rectangle_GetPerimeter_ValidInput_CorrectReturn(int side1, int side2, int expected)
+        public void Rectangle_GetPerimeter_ValidInput_CorrectReturn(double side1, double side2, double expected)
         {
 
             var rec = new Rectangle("blue", side1, side2);

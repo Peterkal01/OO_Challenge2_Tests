@@ -8,17 +8,20 @@ namespace ShapeLibrary
 {
     public class Equilateral : Triangle
     {
-        public Equilateral(string sColour, double s1, double s2, double s3) : base(sColour, s1, s2, s3)
+        public Equilateral(string sColour, double s1) : base(sColour, s1, s1, s1)
         {
-            Side1Length = s1;
-            Side2Length = s2;
-            Side3Length = s3;
+           
         }
 
        public double GetArea()
         {
             return Math.Sqrt(3)/(4)*(Side1Length * Side1Length);
         }
+        public override string ToString()
+        {
+            return "Color: " + Colour + "  Side Length: " + Side1Length + "  Area: " + GetArea();
+        }
+
 
     }
 }

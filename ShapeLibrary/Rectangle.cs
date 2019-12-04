@@ -16,6 +16,10 @@ namespace ShapeLibrary
         {
             return Side1Length * Side2Length;
         }
+        public override string ToString()
+        {
+            return "Color: " + Colour + "  Side Length: " + Side1Length + "  Area: " + GetArea();
+        }
 
     }
 }

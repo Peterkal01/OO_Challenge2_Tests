@@ -32,7 +32,7 @@ namespace ShapeCreate
             Console.Write("Enter selection: ");
             var choice = int.Parse(Console.ReadLine());
 
-
+            //square
             if (choice == 1)
             {
 
@@ -41,19 +41,18 @@ namespace ShapeCreate
                 try
                 {
 
-                    Console.Write("Please enter the Side Length of your square: ");
+         
 
                     Console.WriteLine("Enter colour...");
-                    var c1 = Console.ReadLine();
-                    if(Array.IndexOf(colours, c1) == -1)
+                    string c1 = Console.ReadLine();
+                    if (Array.IndexOf(colours, c1) == -1)
                     {
                         throw new InvalidInputException("Invalid colour");
-                        
-                    }
 
-
+                    }                                  
                     Console.WriteLine("Enter side length...");
-                    var squareSide1 = int.Parse(Console.ReadLine());
+                    double squareSide1 = Convert.ToDouble(Console.ReadLine());
+
 
                     if (squareSide1 < 1)
                     {
@@ -74,20 +73,17 @@ namespace ShapeCreate
             }
 
 
+            //rectangle
             else if (choice == 2)
             {
-
                 List<Rectangle> r = new List<Rectangle>();
-
                 try
                 {
-
                     Console.WriteLine("Enter colour...");
                     var c2 = Console.ReadLine();
                     if (Array.IndexOf(colours, c2) == -1)
                     {
                         throw new InvalidInputException("Invalid colour");
-
                     }
 
                     Console.WriteLine("Enter first side length...");
@@ -99,7 +95,6 @@ namespace ShapeCreate
 
                     Console.WriteLine("Enter second side length...");
                     var rectSide2 = int.Parse(Console.ReadLine());
-
                     if (rectSide2 < 1)
                     {
                         throw new InvalidInputException("Invalid input, numbers must not be negative");
@@ -113,17 +108,14 @@ namespace ShapeCreate
                     Console.WriteLine(message);
                 }
 
-
                 foreach (Rectangle i in r)
                     Console.WriteLine("Rectangle: " + i.ToString());
-
             }
-            else
-            {
-                Console.WriteLine("invalid option");
-            }
+            
 
 
+
+            //right angled
             if (choice == 3)
             {
 
@@ -154,7 +146,7 @@ namespace ShapeCreate
                     {
                         throw new InvalidInputException("Invalid input, numbers must not be negative");
                     }
-                    rAngle.Add(new RightAngle(c3, rAngleSide1, rAngleSide2, rAngleSide3));
+                    rAngle.Add(new RightAngle(c3, rAngleSide1, rAngleSide2));
 
                 }
 
@@ -166,21 +158,111 @@ namespace ShapeCreate
 
                 foreach (RightAngle i in rAngle)
                     Console.WriteLine("RightAngledTriangle: " + i.ToString());
-
             }
-            else
+
+
+            //equilateral
+            if (choice == 4)
             {
-                Console.WriteLine("invalid option");
+
+                List<Equilateral> rAngle = new List<Equilateral>();
+
+                try
+                {
+
+                    Console.WriteLine("Enter colour...");
+                    var c3 = Console.ReadLine();
+                    if (Array.IndexOf(colours, c3) == -1)
+                    {
+                        throw new InvalidInputException("Invalid colour");
+
+                    }
+
+                    Console.WriteLine("Enter first side length...");
+                    var EquliateralSide1 = int.Parse(Console.ReadLine());
+                    if (EquliateralSide1 < 1)
+                    {
+                        throw new InvalidInputException("Invalid input, numbers must not be negative");
+                    }
+
+                    Console.WriteLine("Enter second side length...");
+                    var rAngleSide2 = int.Parse(Console.ReadLine());
+
+                    if (rAngleSide2 < 1)
+                    {
+                        throw new InvalidInputException("Invalid input, numbers must not be negative");
+                    }
+                    rAngle.Add(new Equilateral(c3, EquliateralSide1));
+
+                }
+
+                catch (InvalidInputException message)
+                {
+                    Console.WriteLine(message);
+                }
+
+
+                foreach (Equilateral i in rAngle)
+                    Console.WriteLine("Equilateral Triangle: " + i.ToString());
+            }
+
+
+            //circle
+            if (choice == 5)
+            {
+
+                List<Circle> s = new List<Circle>();
+
+                try
+                {
 
 
 
+                    Console.WriteLine("Enter colour...");
+                    string c1 = Console.ReadLine();
+                    if (Array.IndexOf(colours, c1) == -1)
+                    {
+                        throw new InvalidInputException("Invalid colour");
 
+                    }
+                    Console.WriteLine("Enter Radius...");
+                    double Radius = Convert.ToDouble(Console.ReadLine());
+
+
+                    if (Radius < 1)
+                    {
+                        throw new InvalidInputException("Invalid input, numbers must not be negative");
+                    }
+
+                    s.Add(new Circle(c1, Radius));
+                }
+                catch (InvalidInputException message)
+                {
+                    Console.WriteLine(message);
+                }
+
+
+                foreach (Circle i in s)
+                    Console.WriteLine("Circle: " + i.ToString());
 
             }
 
 
 
-                Console.ReadKey();
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Console.ReadKey();
 
             }
         }

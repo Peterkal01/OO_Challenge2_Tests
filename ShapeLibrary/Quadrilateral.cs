@@ -13,7 +13,7 @@ namespace ShapeLibrary
         public double Side3Length { get; set; }
         public double Side4Length { get; set; }
 
-        public Quadrilateral(string sColour, double s1, double s2, double s3, double s4) : base(sColour, s1, s2, s3, s4)
+        public Quadrilateral(string sColour, double s1, double s2, double s3, double s4) : base(sColour)
         {
 
             Side1Length = s1;
@@ -27,6 +27,10 @@ namespace ShapeLibrary
         {
             return Side1Length + Side2Length + Side3Length + Side4Length;
 
+        }
+        public override string ToString()
+        {
+            return "Color: " + Colour + " Area: " + GetPerimeter();
         }
     }
 }
