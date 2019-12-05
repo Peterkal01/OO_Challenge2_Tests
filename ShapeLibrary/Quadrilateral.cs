@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeLibrary
 {
-    public class Quadrilateral : Shape
+    public abstract class Quadrilateral : Shape, IShapeCalc
     {
         public double Side1Length { get; set; }
         public double Side2Length { get; set; }
@@ -23,14 +23,22 @@ namespace ShapeLibrary
 
         }
 
-        public double GetPerimeter()
+        public virtual double GetPerimeter()
         {
             return Side1Length + Side2Length + Side3Length + Side4Length;
 
         }
         public override string ToString()
         {
-            return "Color: " + Colour + " Area: " + GetPerimeter();
+            return "Color: " + Colour + " Perimeter: " + GetPerimeter() + "  Area: " + GetArea() + " ";
         }
+
+
+        public virtual double GetArea()
+        {
+            return Side1Length * Side2Length;
+        }
+
+        
     }
 }

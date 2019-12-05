@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeLibrary
 {
-    public class Circle : Shape
+    public class Circle : Shape, IShapeCalc
     {
         public readonly double PI = Math.Round(Math.PI, 3);
         public double Pi { get; set; }

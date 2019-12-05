@@ -13,14 +13,20 @@ namespace ShapeLibrary
            
         }
 
-        public double GetArea()
+        public override double GetArea()
         {
             return Side1Length * Side1Length;
         }
 
         public override string ToString()
         {
-            return "Color: " + Colour + "  Side Length: " + Side1Length + "  Area: " + GetArea();
+            return "Color: " + Colour + "  Side Length: " + Side1Length + "  Area: " + GetArea() + " " + " Perimeter" + GetPerimeter();
         }
+        public override double GetPerimeter()
+        {
+            return Side1Length + Side1Length + Side1Length + Side1Length;
+
+        }
+
     }
 }

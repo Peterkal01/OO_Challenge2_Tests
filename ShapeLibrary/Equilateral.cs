@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeLibrary
 {
-    public class Equilateral : Triangle
+    public class Equilateral : Triangle, IShapeCalc
     {
         public Equilateral(string sColour, double s1) : base(sColour, s1, s1, s1)
         {
@@ -22,6 +22,7 @@ namespace ShapeLibrary
             return "Color: " + Colour + "  Side Length: " + Side1Length + "  Area: " + GetArea();
         }
 
-
+        
+        
     }
 }
